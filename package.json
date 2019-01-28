@@ -22,8 +22,10 @@
   "dependencies": {
     "@nestjs/common": "^5.4.0",
     "@nestjs/core": "^5.4.0",
+    "@nestjs/mongoose": "^5.2.2",
     "bootstrap": "^4.2.1",
     "hbs": "^4.0.1",
+    "mongoose": "^5.4.7",
     "node-sass-middleware": "^0.11.0",
     "path": "^0.12.7",
     "reflect-metadata": "^0.1.12",
