@@ -12,6 +12,8 @@ async function bootstrap() {
   app.setBaseViewsDir(join(__dirname, 'views'));
   app.setViewEngine('hbs');
 
+  app.enableCors();
+
   app.use(require('node-sass-middleware')({
     src:  __dirname + '/public/css',
     dest: __dirname + '/public/css',
