@@ -3,53 +3,59 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Buddy</title>
+  <title>Buddy - o app dos pets</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
 
-  <div id="header" class="container-fluid">
+  <div id="header-visitor" class="container-fluid">
     <div class="row align-items-center justify-content-center">
       <div>
         <img src="buddy_icone.png" alt="Buddy" height="70px">
       </div>
       <div style="margin-left: 10px">
-        <p>Buddy</p>
+        <p>Buddy - o app dos pets</p>
       </div>
     </div>
   </div>
 
   <div class="container">
-    <form method="post">
-      <div class="form-group">
-        <label for="nome">
-          <h4>Nome:</h4>
-        </label>
-        <input type="text" required class="form-control form-control-lg" id="nome" name="nome" placeholder="Digite deu nome completo">
-      </div>
-      <div class="form-group">
-        <label for="email">
-          <h4>Email:</h4>
-        </label>
-        <input type="email" required class="form-control form-control-lg" id="email" name="email" aria-describedby="emailHelp" placeholder="Digite seu email">
-      </div>
-      <div class="form-group">
-        <label for="telefone">
-          <h4>Telefone ou Celular:</h4>
-        </label>
-        <input type="tel" required class="form-control form-control-lg" id="telefone" name="telefone" placeholder="Digite seu telefone para contato">
-      </div>
+    <div class="row justify-content-center">
+      <div class="col-8">
+        <form method="post">
+          <div class="form-group">
+            <label for="nome">
+              <h5>Nome:</h5>
+            </label>
+            <input type="text" required class="form-control form-control-lg" id="nome" name="nome" placeholder="Digite deu nome completo">
+          </div>
+          <div class="form-group">
+            <label for="email">
+              <h5>Email:</h5>
+            </label>
+            <input type="email" required class="form-control form-control-lg" id="email" name="email" aria-describedby="emailHelp" placeholder="Digite seu email">
+          </div>
+          <div class="form-group">
+            <label for="telefone">
+              <h5>Telefone ou Celular:</h5>
+            </label>
+            <input type="tel" required class="form-control form-control-lg" id="telefone" name="telefone" placeholder="Digite seu telefone para contato">
+          </div>
 
-      <div class="row">
-        <div class="col-6 align-items-center">
-          <button type="submit" id="btn-center" type="button" class="btn btn-primary" onClick="empty()">Cadastrar</button>
-        </div>
-        <div class="col-6">
-          <button id="btn-center" type="button" class="btn btn-secondary" onclick="getIndex()">Voltar</button>
-        </div>
+          <div class="row">
+            <div class="col-6 align-items-center">
+              <button type="submit" id="btn-center" type="button" class="btn btn-primary" onClick="empty()">Cadastrar</button>
+            </div>
+            <div class="col-6">
+              <button id="btn-center" type="button" class="btn btn-secondary" onclick="getIndex()">Voltar</button>
+            </div>
+          </div>
+        </form>
+
       </div>
-    </form>
+    </div>
+
   </div>
 </body>
 

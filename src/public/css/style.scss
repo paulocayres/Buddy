@@ -19,33 +19,54 @@ $cinza: #cfc2cf;
 	align-content: center;
 }
 
+#modal-header {
+	background-color: $cinza;
+}
+
+#modal{
+	text-align: center;
+}
+
+.modal-center{
+	position: relative;
+	left: 50%;
+	transform: translatex(-50%);
+}
+
+
+
+#header-visitor{
+	@extend #header;
+	margin-bottom: 40px;
+}
+
 .justify {
 	text-align: justify;
 }
 
 .faixa {
-	margin-bottom: 200px;
-	margin-top: 200px;
+	margin-bottom: 100px;
+	margin-top: 100px;
 }
 
 
 
-@media (min-width: 1px) and (max-width: 768px) {
-	h1 {
+@media (min-width: 1px) and (max-width: 998px) {
+/* 	h1 {
 		font-size: 70px;
 	}
 
 	h2 {
 		font-size: 62px;
-	}
+	}*/
 
 	h3 {
-		font-size: 56px;
-	}
+		font-size: 50px;
+	}/*
 
 	h4 {
 		font-size: 48px;
-	}
+	}*/
 
 	h5 {
 		font-size: 40px;
@@ -53,7 +74,7 @@ $cinza: #cfc2cf;
 
 	p {
 		font-size: 30px;
-	}
+	} 
 
 	.img-faixa {
 		max-width: 80%;
@@ -78,8 +99,8 @@ $cinza: #cfc2cf;
 
 }
 
-@media (min-width: 768px) {
-	h1 {
+@media (min-width: 998px) {
+/* 	h1 {
 		font-size: 48px;
 	}
 
@@ -97,7 +118,7 @@ $cinza: #cfc2cf;
 
 	h5 {
 		font-size: 28px;
-	}
+	}*/
 
 	p {
 		font-size: 23px;
