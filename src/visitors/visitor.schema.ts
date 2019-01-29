@@ -1,7 +1,7 @@
 import * as mongoose from 'mongoose';
 
 export const VisitorSchema = new mongoose.Schema({
-  name: String,
+  nome: String,
   email: String,
-  phone: String,
+  telefone: String,
 });

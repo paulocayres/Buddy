@@ -30,7 +30,7 @@ $cinza: #cfc2cf;
 
 
 
-@media (min-width: 1px) {
+@media (min-width: 1px) and (max-width: 992px) {
 	h1 {
 		font-size: 70px;
 	}
@@ -67,10 +67,14 @@ $cinza: #cfc2cf;
 		transform: translatex(-50%);
 		font-size: 40px;
 	}
+	.btn-close {
+		font-size: 35px;
+	}
 
-
-
-
+	.form-control-lg{
+		height: 80px;
+		font-size: 40px;
+	}
 
 }
 
@@ -111,6 +115,12 @@ $cinza: #cfc2cf;
 		transform: translatex(-50%);
 		font-size: 24px;
 	}
+
+	.btn-close {
+		font-size: 20px;
+	}
+
+
 
 
 
@@ -153,5 +163,10 @@ $cinza: #cfc2cf;
 		transform: translatex(-50%);
 		font-size: 24px;
 	}
+
+	.btn-close {
+		font-size: 20px;
+	}
+
 
 }

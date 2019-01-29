@@ -1,5 +1,5 @@
 export class VisitorDto {
-    readonly name: string;
+    readonly nome: string;
     readonly email: string;
-    readonly phone: string;
+    readonly telefone: string;
   }
