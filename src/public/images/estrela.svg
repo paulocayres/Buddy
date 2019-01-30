@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="73.631844mm"
+   height="68.480309mm"
+   viewBox="0 0 73.631844 68.480309"
+   version="1.1"
+   id="svg4638"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="estrela.svg">
+  <defs
+     id="defs4632" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="1384.8611"
+     inkscape:cy="-107.73126"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="706"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4635">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Camada 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(260.57783,-51.849128)">
+    <polygon
+       transform="matrix(0.26844945,0,0,0.26750121,-771.43713,-301.51997)"
+       id="polygon4410"
+       points="1903,1418.7833 1997.7634,1405.27 2040.1429,1321 2082.5223,1405.27 2177.2857,1418.7833 2108.7143,1484.3783 2124.9018,1577 2040.1429,1533.27 1955.3839,1577 1971.5714,1484.3783 "
+       style="fill:#820265;fill-rule:evenodd;stroke:none;stroke-width:1" />
+  </g>
+</svg>
