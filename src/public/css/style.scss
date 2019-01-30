@@ -12,11 +12,17 @@ $cinza: #cfc2cf;
 	}
 }
 
-#header {
+body {
+	padding-top: 100px;
+}
+
+.visitor{
+	margin-top: 50px;
+}
+
+.navbar {
+	height: 100px !important; /*i assume your navbar size 100px*/
 	background-color: $cinza;
-	height: 150px;
-	padding-top: 30px;
-	align-content: center;
 }
 
 #modal-header {
@@ -31,13 +37,6 @@ $cinza: #cfc2cf;
 	position: relative;
 	left: 50%;
 	transform: translatex(-50%);
-}
-
-
-
-#header-visitor{
-	@extend #header;
-	margin-bottom: 40px;
 }
 
 .justify {
@@ -97,6 +96,10 @@ $cinza: #cfc2cf;
 		font-size: 40px;
 	}
 
+	.pad-index{
+		padding-left: 15px;
+	}
+
 }
 
 @media (min-width: 998px) {
@@ -139,5 +142,9 @@ $cinza: #cfc2cf;
 
 	.btn-close {
 		font-size: 20px;
+	}
+
+	.pad-index{
+		padding-left: 33px;
 	}
 }
