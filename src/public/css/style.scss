@@ -20,11 +20,6 @@ body {
 	margin-top: 50px;
 }
 
-.navbar {
-	height: 130px !important; /*i assume your navbar size 100px*/
-	background-color: $cinza;
-}
-
 #modal-header {
 	background-color: $cinza;
 }
@@ -109,6 +104,15 @@ body {
 		padding-left: 18px;
 	}
 
+	.navbar {
+		height: 150px !important; /*i assume your navbar size 100px*/
+		background-color: $cinza;
+	}
+
+	.img-logo{
+		height:"100px";
+	}
+
 }
 
 @media (min-width: 998px) {
@@ -160,5 +164,14 @@ body {
 
 	.pad-index{
 		padding-left: 38px;
+	}
+
+	.navbar {
+		height: 100px !important; /*i assume your navbar size 100px*/
+		background-color: $cinza;
+	}
+
+	.img-logo{
+		height:"80px";
 	}
 }
