@@ -11,8 +11,8 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="159.77199mm"
-   height="63.965267mm"
-   viewBox="0 0 159.77199 63.965267"
+   height="62.974766mm"
+   viewBox="0 0 159.77199 62.974765"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
@@ -188,11 +188,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="288.46486"
-     inkscape:cy="-46.674608"
+     inkscape:zoom="0.7"
+     inkscape:cx="278.47521"
+     inkscape:cy="150.75559"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g46"
      showgrid="false"
      inkscape:window-width="1366"
      inkscape:window-height="706"
@@ -216,18 +216,6 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-22.167571,-92.660223)">
-    <text
-       style="font-variant:normal;font-weight:bold;font-stretch:normal;font-size:11.64166641px;font-family:Champagne;-inkscape-font-specification:Champagne;writing-mode:lr-tb;fill:#8d198f;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.35277778;stroke-opacity:1;"
-       id="text22"
-       x="41.453579"
-       y="154.28351">
-      <tspan
-         x="41.453579 46.722595 52.39209 59.37709 66.315521 69.435486 76.350639 83.33564 86.804855 93.789856 96.909821 103.84826 106.96822 111.33385 117.86482 123.53431 126.65427 133.56943 140.1004"
-         y="154.28351"
-         sodipodi:role="line"
-         id="tspan20"
-         style="stroke-width:0.35277778;stroke:none;stroke-opacity:1;">Tudo para o seu pet</tspan>
-    </text>
     <g
        id="g24"
        transform="matrix(0.35277777,0,0,-0.35277777,-46.093516,229.60432)">
@@ -249,18 +237,18 @@
     <g
        id="g46"
        transform="matrix(0.35277777,0,0,-0.35277777,-46.093516,229.60432)"
-       style="stroke:#cfc2cf;stroke-opacity:1;fill:#cfc2cf;fill-opacity:1">
+       style="fill:#cfc2cf;fill-opacity:1;stroke:#cfc2cf;stroke-opacity:1">
       <g
          id="g48"
          clip-path="url(#clipPath52)"
-         style="stroke:#cfc2cf;stroke-opacity:1;fill:#cfc2cf;fill-opacity:1">
+         style="fill:#ebbbeb;fill-opacity:1;stroke:#cfc2cf;stroke-opacity:1">
         <g
            id="g54"
            transform="translate(251.7707,297.1692)"
-           style="stroke:#cfc2cf;stroke-opacity:1;fill:#cfc2cf;fill-opacity:1">
+           style="fill:#ebbbeb;fill-opacity:1;stroke:#cfc2cf;stroke-opacity:1">
           <path
              d="m 0,0 c -2.994,-4.53 -10.178,-10.9 -16.402,-14.94 -6.224,4.04 -13.407,10.41 -16.401,14.94 -3.747,5.666 -3.869,12.252 0.4,16.519 4.27,4.268 11.19,4.268 15.458,0 l 0.543,-0.544 0.544,0.544 c 4.268,4.268 11.188,4.268 15.458,0 C 3.869,12.252 3.747,5.666 0,0"
-             style="fill:#cfc2cf;fill-opacity:1;fill-rule:evenodd;stroke:#cfc2cf;stroke-opacity:1"
+             style="fill:#ebbbeb;fill-opacity:1;fill-rule:evenodd;stroke:#cfc2cf;stroke-opacity:1"
              id="path56"
              inkscape:connector-curvature="0" />
         </g>
@@ -341,18 +329,18 @@
     <g
        id="g146"
        transform="matrix(0.35277777,0,0,-0.35277777,-46.093516,229.60432)"
-       style="fill:#cfc2cf;fill-opacity:1">
+       style="fill:#ebbbeb;fill-opacity:1">
       <g
          id="g148"
          clip-path="url(#clipPath152)"
-         style="fill:#cfc2cf;fill-opacity:1">
+         style="fill:#ebbbeb;fill-opacity:1">
         <g
            id="g154"
            transform="translate(527.1769,299.5588)"
-           style="fill:#cfc2cf;fill-opacity:1">
+           style="fill:#ebbbeb;fill-opacity:1">
           <path
              d="m 0,0 c 0,-10.181 -8.253,-18.435 -18.435,-18.435 -10.181,0 -18.434,8.254 -18.434,18.435 0,10.182 8.253,18.435 18.434,18.435 C -8.253,18.435 0,10.182 0,0"
-             style="fill:#cfc2cf;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             style="fill:#ebbbeb;fill-opacity:1;fill-rule:nonzero;stroke:none"
              id="path156"
              inkscape:connector-curvature="0" />
         </g>
@@ -393,14 +381,14 @@
     <g
        id="g180"
        transform="matrix(0.35277777,0,0,-0.35277777,-46.093516,229.60432)"
-       style="fill:#cfc2cf;fill-opacity:1">
+       style="fill:#ebbbeb;fill-opacity:1">
       <g
          id="g182"
          clip-path="url(#clipPath186)"
-         style="fill:#cfc2cf;fill-opacity:1">
+         style="fill:#ebbbeb;fill-opacity:1">
         <path
            d="M 851.195,6.665 H -12.306 v 620.347 h 863.501 z"
-           style="fill:#cfc2cf;fill-opacity:1;fill-rule:evenodd;stroke:none"
+           style="fill:#ebbbeb;fill-opacity:1;fill-rule:evenodd;stroke:none"
            id="path188"
            inkscape:connector-curvature="0" />
       </g>
@@ -423,5 +411,16 @@
         </g>
       </g>
     </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.69999981px;line-height:1.25;font-family:'Berlin Sans FB Demi';-inkscape-font-specification:'Berlin Sans FB Demi, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#8d198f;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="35.657051"
+       y="153.68782"
+       id="text3054"><tspan
+         sodipodi:role="line"
+         id="tspan3052"
+         x="35.657051"
+         y="153.68782"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.69999981px;font-family:'Berlin Sans FB Demi';-inkscape-font-specification:'Berlin Sans FB Demi, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#8d198f;fill-opacity:1;stroke-width:0.26458332">Tudo para o seu pet</tspan></text>
   </g>
 </svg>

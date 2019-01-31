@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="40.446392mm"
-   height="68.480309mm"
-   viewBox="0 0 40.446392 68.480309"
+   width="51.407703mm"
+   height="76.795784mm"
+   viewBox="0 0 51.407703 76.795785"
    version="1.1"
    id="svg4592"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="310.71986"
-     inkscape:cy="-16.302671"
+     inkscape:zoom="1.4"
+     inkscape:cx="64.570174"
+     inkscape:cy="99.54441"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -44,7 +44,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -52,11 +52,11 @@
      inkscape:label="Camada 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-23.622038,-76.039608)">
+     transform="translate(-23.622043,-76.039606)">
     <polygon
-       transform="matrix(0.26844945,0,0,0.26750121,-602.13363,-277.32949)"
+       transform="matrix(0.34120149,0,0,0.29998354,-771.71863,-320.23865)"
        id="polygon4408"
-       points="2331,1470.3333 2394.8667,1470.3333 2375.2,1577 2481.6667,1427.6667 2417.8,1427.6667 2437.4667,1321 "
+       points="2481.6667,1427.6667 2417.8,1427.6667 2437.4667,1321 2331,1470.3333 2394.8667,1470.3333 2375.2,1577 "
        style="fill:#820265;fill-rule:evenodd;stroke:none;stroke-width:1" />
   </g>
 </svg>
