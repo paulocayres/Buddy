@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { join } from 'path';
 import * as path from 'path';
 import { AppModule } from './app.module';
+import * as hbs from 'hbs';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -12,15 +13,19 @@ async function bootstrap() {
   app.useStaticAssets(path.join(__dirname, 'public/js'));
   app.setBaseViewsDir(join(__dirname, 'views'));
   app.setViewEngine('hbs');
-
+  hbs.registerPartials(__dirname + '/views/partials');
   app.enableCors();
 
-  app.use(require('node-sass-middleware')({
-    src:  __dirname + '/public/css',
-    dest: __dirname + '/public/css',
-    debug: true,
-    outputStyle: 'compressed',
-  }));
+  hbs.registerPartial('head', 'head');
+
+  app.use(
+    require('node-sass-middleware')({
+      src: __dirname + '/public/css',
+      dest: __dirname + '/public/css',
+      debug: true,
+      outputStyle: 'compressed',
+    }),
+  );
 
   await app.listen(process.env.PORT || 3000);
 }
