@@ -14,7 +14,7 @@
   <div class="container visitor">
     <div class="row justify-content-center">
       <div class="col-8">
-        <form method="post">
+        <form method="post" onsubmit = "doGtagEvent()">
           <div class="form-group">
             <label for="nome">
               <h5>Nome:</h5>
@@ -52,6 +52,10 @@
 
 
 <script type="text/javascript">
+
+  function doGtagEvent(){
+    gtag('event', 'confirma'});
+  }
   function getIndex() {
     window.location.href = "../";
   }
