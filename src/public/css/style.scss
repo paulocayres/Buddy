@@ -3,7 +3,8 @@ $theme-colors: ("primary": #9c4b9c,
 
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
 
-$cinza: #ebbbeb;
+$nav: #ebbbeb;
+$title: #995699;
 
 @include media-breakpoint-down(md) {
 	.container {
@@ -12,23 +13,35 @@ $cinza: #ebbbeb;
 	}
 }
 
-body {
-	padding-top: 150px;
+#title {
+	text-align: center;
+	color: $title;
 }
 
-.visitor{
+#title-row{
+	margin-top: 100px;
+}
+
+.svg {
+	position: relative;
+	left: 50%;
+	transform: translatex(-50%);
+}
+
+.visitor {
 	margin-top: 50px;
 }
 
 #modal-header {
-	background-color: $cinza;
-}
-
-#modal{
+	background-color: $nav;
 	text-align: center;
 }
 
-.modal-center{
+#modal {
+	text-align: center;
+}
+
+.modal-center {
 	position: relative;
 	left: 50%;
 	transform: translatex(-50%);
@@ -43,26 +56,28 @@ body {
 	margin-top: 100px;
 }
 
-#buttons{
+#buttons {
 	padding-bottom: 30px;
 }
 
 
 
 @media (min-width: 1px) and (max-width: 998px) {
-/* 	h1 {
+	h1 {
 		font-size: 70px;
 	}
+
 	h2 {
 		font-size: 62px;
-	}*/
+	}
 
 	h3 {
 		font-size: 50px;
-	}/*
+	}
+
 	h4 {
 		font-size: 48px;
-	}*/
+	}
 
 	h5 {
 		font-size: 40px;
@@ -70,7 +85,7 @@ body {
 
 	p {
 		font-size: 30px;
-	} 
+	}
 
 	.img-faixa {
 		max-width: 80%;
@@ -89,32 +104,38 @@ body {
 		transform: translatex(-50%);
 		font-size: 40px;
 	}
+
 	.btn-close {
 		font-size: 35px;
 	}
 
-	.form-control-lg{
+	.form-control-lg {
 		height: 80px;
 		font-size: 40px;
 	}
 
-	.pad-index{
+	.pad-index {
 		padding-left: 18px;
 	}
 
 	.navbar {
-		height: 150px !important; /*i assume your navbar size 100px*/
-		background-color: $cinza;
+		height: 120px !important;
+		/*i assume your navbar size 100px*/
+		background-color: $nav;
 	}
 
-	.img-logo{
-		height:"100px";
+	.img-logo {
+		height: "90px";
+	}
+
+	body {
+		padding-top: 150px;
 	}
 
 }
 
 @media (min-width: 998px) {
-/* 	h1 {
+	/* 	h1 {
 		font-size: 48px;
 	}
 	h2 {
@@ -156,16 +177,21 @@ body {
 		font-size: 20px;
 	}
 
-	.pad-index{
+	.pad-index {
 		padding-left: 33px;
 	}
 
 	.navbar {
-		height: 100px !important; /*i assume your navbar size 100px*/
-		background-color: $cinza;
+		height: 80px !important;
+		/*i assume your navbar size 100px*/
+		background-color: $nav;
 	}
 
-	.img-logo{
-		height:"80px";
+	.img-logo {
+		height: "60px";
+	}
+
+	body {
+		padding-top: 50px;
 	}
 }

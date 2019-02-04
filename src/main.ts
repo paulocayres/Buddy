@@ -15,7 +15,6 @@ async function bootstrap() {
   app.setViewEngine('hbs');
   hbs.registerPartials(__dirname + '/views/partials');
   app.enableCors();
-
   hbs.registerPartial('head', 'head');
 
   app.use(

@@ -11,12 +11,12 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="159.77199mm"
-   height="60.96917mm"
-   viewBox="0 0 159.77199 60.969169"
+   height="62.974766mm"
+   viewBox="0 0 159.77199 62.974765"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="logo.svg">
+   sodipodi:docname="logo_bkp.svg">
   <defs
      id="defs2">
     <linearGradient
@@ -190,9 +190,9 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
      inkscape:cx="278.47521"
-     inkscape:cy="143.17539"
+     inkscape:cy="150.75559"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g46"
      showgrid="false"
      inkscape:window-width="1366"
      inkscape:window-height="706"
@@ -207,7 +207,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -411,5 +411,16 @@
         </g>
       </g>
     </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.69999981px;line-height:1.25;font-family:'Berlin Sans FB Demi';-inkscape-font-specification:'Berlin Sans FB Demi, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#8d198f;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="35.657051"
+       y="153.68782"
+       id="text3054"><tspan
+         sodipodi:role="line"
+         id="tspan3052"
+         x="35.657051"
+         y="153.68782"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:12.69999981px;font-family:'Berlin Sans FB Demi';-inkscape-font-specification:'Berlin Sans FB Demi, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#8d198f;fill-opacity:1;stroke-width:0.26458332">Tudo para o seu pet</tspan></text>
   </g>
 </svg>

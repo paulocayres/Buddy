@@ -1,7 +1,5 @@
-import { Controller, Get, Render, Post, Body } from '@nestjs/common';
+import { Controller, Get, Render, Logger } from '@nestjs/common';
 import { AppService } from './app.service';
-import { VisitorDto } from './visitors/visitor.dto';
-import { Visitor } from './visitors/visitor.interface';
 
 @Controller()
 export class AppController {
@@ -9,12 +7,7 @@ export class AppController {
 
   @Get()
   @Render('index')
-    get() {
-      return '';
-    }
-
-  @Post()
-  async create(@Body() visitorDto: VisitorDto) {
-    this.appService.create(visitorDto);
+  get() {
+    return'';
   }
 }

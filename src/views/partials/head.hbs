@@ -20,5 +20,34 @@
         gtag('config', 'UA-133564033-2');
     </script>
 
+    <script src="https://www.google.com/recaptcha/api.js?render=6Leh2o4UAAAAADVuUMVxFy_8dNHjH5lE08YLAGqo"></script>
+    <script>
+        grecaptcha.ready(function () {
+            // do request for recaptcha token
+            // response is promise with passed token
+            grecaptcha.execute('6Leh2o4UAAAAADVuUMVxFy_8dNHjH5lE08YLAGqo', { action: 'validate_captcha' })
+                .then(function (token) {
+                    // add token value to form
+                    document.getElementById('g-recaptcha-response').value = token;
+                });
+        });
+    </script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#visitorForm').submit(function () {
+                $(this).ajaxSubmit({
+                    error: function (xhr) {
+                        status('Error: ' + xhr.status);
+                    },
+                    success: function (response) {
+                        console.log(response);
+                    }
+                });
+                //Very important line, it disable the page refresh.
+                return false;
+            });
+        });
+    </script>
 
 </head>

@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { VisitorDto } from './visitor.dto';
@@ -10,8 +10,8 @@ export class VisitorsService {
     constructor(@InjectModel('Visitor') private readonly visitorModel: Model<Visitor>) {}
 
     async create(visitorDto: VisitorDto): Promise<Visitor> {
-      const createdVisitor = new this.visitorModel(visitorDto);
-      return await createdVisitor.save();
+      const createdVisitor = await new this.visitorModel(visitorDto);
+      return createdVisitor.save();
     }
 
     async findAll(): Promise<Visitor[]> {

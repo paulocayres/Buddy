@@ -1,26 +1,27 @@
-import { Controller, Render, Get, Post, Body, Logger } from '@nestjs/common';
+import { Controller, Render, Get, Post, Body } from '@nestjs/common';
 import { VisitorDto } from './visitor.dto';
-/* import { Visitor } from '../visitor.interface';
-import { Injectable } from '@nestjs/common';
-import { Model } from 'mongoose';
-import { InjectModel } from '@nestjs/mongoose'; */
 import { VisitorsService } from './visitors.service';
 
 @Controller('visitors')
 export class VisitorsController {
-
-    constructor(private readonly visitorsService: VisitorsService) {}
+  ret: any;
+  constructor(private readonly visitorsService: VisitorsService) {}
 
   @Get()
   @Render('visitors')
-    get() {
-      Logger.log(this.visitorsService.findAll());
-    }
+  get() {
+    return '';
+  }
 
   @Post()
   @Render('visitors')
   async create(@Body() visitorDto: VisitorDto) {
-    Logger.log(visitorDto);
-    this.visitorsService.create(visitorDto);
+    try {
+      const visitor = await this.visitorsService.create(visitorDto);
+      return { message: 'Cadastro realizado com sucesso' };
+    } catch {
+      return { message: 'Falha no cadastro, tente mais terde' };
+    }
   }
+
 }

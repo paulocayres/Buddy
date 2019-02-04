@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html>
 
-  {{>head}}
+{{>head}}
 
 <body>
 
-<nav class="navbar navbar-light fixed-top navbar-fixed-top justify-content-center pad-index">
+  <nav class="navbar navbar-light fixed-top navbar-fixed-top justify-content-center pad-index">
     <a class="navbar-brand">
-      <img src="logo.svg" height="90px" class="d-inline-block" alt="">
+      <img src="logo.svg" height="70px" class="d-inline-block" alt="">
     </a>
-</nav>
+  </nav>
+
 
 
   <div class="container">
 
+    <div id="title-row" class="row">
+      <div id="title" class="col-12 align-items-center">
+        <h2>O que seu pet precisa?</h2>
+      </div>
+    </div>
+
     <div class="row faixa align-items-center">
       <div class="col-2">
-        <img src="b.svg" height="10px" alt="" class="img-fluid img-faixa">
+        <img src="b.svg" height="10px" alt="" class="img-fluid img-faixa  svg">
       </div>
       <div class="col-10">
-        <h3>Tudo para o seu pet.</h3>
-        <p class="justify">Serviços e produtos para o seu pet, de forma rápida, segura e 100% digital. No buddy, seu querido amigo conta com
-          uma rede de empresas e profissionais comprometidos com a qualidade de vida e bem estar dos animais.
+        <h3>Pet app.</h3>
+        <p class="justify">Online e agora, produtos e serviços para o seu querido amigo. No buddy você conta com uma rede de profissionais comprometidos
+          e qualificados.
         </p>
       </div>
     </div>
 
     <div class="row faixa align-items-center">
       <div class="col-2">
-        <img src="raio.svg" alt="" class="img-fluid img-faixa">
+        <img src="raio.svg" alt="" class="img-fluid img-faixa  svg">
       </div>
       <div class="col-10">
-        <h3>Em minutos.</h3>
-        <p class="justify">Para os clientes que preferem o conforto e a praticidade do home pet, contamos com entregadores e motoristas parceiros
-          para buscar e trazer seu pet ou seus pedidos. O mais rápido possível.
+        <h3>Home Pet.</h3>
+        <p class="justify">Buscamos e levamos o seu pet em minutos, onde você estiver. Rede de entregadores e motoristas parceiros do buddy.
         </p>
       </div>
     </div>
@@ -41,11 +47,11 @@
 
     <div class="row faixa align-items-center">
       <div class="col-2">
-        <img src="calendario.svg" alt="" class="img-fluid img-faixa-p">
+        <img src="calendario.svg" alt="" class="img-fluid img-faixa-p svg">
       </div>
       <div class="col-10">
-        <h3>Agendamento fácil.</h3>
-        <p class="justify">Banho e tosa? Passeio? Agende qualquer serviço para o seu pet com poucos cliques e controle tudo pelo seu celular.
+        <h3>Agendamento fácil e online.</h3>
+        <p class="justify">Seja uma passeio, um banho ou uma consulta veterinária agende qualquer serviço e controle tudo pelo seu celular.
           O buddy notifica você sobre os serviços agendados.
         </p>
       </div>
@@ -53,12 +59,12 @@
 
     <div class="row faixa align-items-center">
       <div class="col-2">
-        <img src="coracao.svg" alt="" class="img-fluid img-faixa-p">
+        <img src="coracao.svg" alt="" class="img-fluid img-faixa-p svg">
       </div>
       <div class="col-10">
         <h3>Adoção digital.</h3>
-        <p class="justify">Tecnologia e solidariedade para ajudar os animais. Você pode adotar um amigo pelo catálogo online de pets. Com as
-          entidades de adoção parceiras do buddy todos os pets são examinados e cuidados.
+        <p class="justify">Tecnologia e solidariedade para ajudar os animais. Adote de forma responsável e segura através de um catálogo online
+          de pets.
         </p>
       </div>
     </div>
@@ -67,51 +73,22 @@
 
     <div class="row faixa align-items-center">
       <div class="col-2">
-        <img src="estrela.svg" alt="" class="img-fluid img-faixa-p">
+        <img src="estrela.svg" alt="" class="img-fluid img-faixa-p svg">
       </div>
       <div class="col-10">
         <h3>Avaliação solidária.</h3>
-        <p class="justify">Avalie rapidamente os serviços e produtos e ajude a manter uma rede de empresas e profissionais amigos dos pets.
+        <p class="justify">Qualifique rapidamente nossos parceiros e entregas. No buddy você ajuda a manter uma rede de empresas e prestadores
+          amigos dos pets.
         </p>
       </div>
     </div>
-
-
-
-
-
   </div>
-
 
   <div id="buttons" class="row">
-    <div class="col-6">
+    <div class="col-12">
       <button id="btn-center" type="button" class="btn btn-primary" onclick="getCadastro()">Quero o Buddy</button>
     </div>
-    <div class="col-6">
-      <button id="btn-center" type="button" class="btn btn-danger" data-toggle="modal" data-target="#NaoModal">Não Quero</button>
-    </div>
   </div>
-
-  <div class="modal fade" id="NaoModal" tabindex="-1" role="dialog" aria-labelledby="NaoModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div id="modal-header" class="modal-header">
-          <h3 class="modal-title modal-center" id="NaoModalLabel">Não Quero</h3>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div id="modal" class="modal-body">
-          <p> Sua resposta foi registrada.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-close" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
 </body>
 
 
@@ -123,6 +100,8 @@
     gtag('event', 'cadastro');
     window.location.href = "../visitors";
   }
+
+ 
 
 </script>
 
