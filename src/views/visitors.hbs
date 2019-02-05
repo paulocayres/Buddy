@@ -3,7 +3,7 @@
 
 {{>head}}
 
-<body onload="grecaptcha.execute()">
+<body>
 
   <nav class="navbar navbar-light fixed-top navbar-fixed-top justify-content-center">
     <a class="navbar-brand">
@@ -14,7 +14,7 @@
   <div class="container visitor">
     <div class="row justify-content-center">
       <div class="col-8">
-        <form id="visitorForm" method="post" onsubmit="doGtagEvent();">
+        <form id="visitorForm" method="post" onsubmit="doGtagEvent();grecaptcha.execute()">
           <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
           <input type="hidden" name="action" value="validate_captcha">
           <div class="form-group">
