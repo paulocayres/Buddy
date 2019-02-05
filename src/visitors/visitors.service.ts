@@ -32,11 +32,7 @@ export class VisitorsService {
     Logger.log(body);
 
     return this.http
-      .post('https://www.google.com/recaptcha/api/siteverify', body, {
-        headers: {
-          'Content-Type': 'x-www-form-urlencoded',
-        },
-      })
+      .get('https://www.google.com/recaptcha/api/siteverify?secret=' + process.env.captcha + '&response=' + token)
       .pipe(
         map(response => response.data),
         catchError(err => Observable.throw(err.message)),
