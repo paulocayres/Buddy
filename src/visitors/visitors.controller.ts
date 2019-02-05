@@ -1,4 +1,4 @@
-import { Controller, Render, Get, Post, Body, Req, Res } from '@nestjs/common';
+import { Controller, Render, Get, Post, Body, Res } from '@nestjs/common';
 import { VisitorDto } from './visitor.dto';
 import { VisitorsService } from './visitors.service';
 
@@ -22,5 +22,17 @@ export class VisitorsController {
     } catch {
       return { message: 'Falha no cadastro, tente mais terde' };
     }
+  }
+
+  @Post('visitors/captcha')
+  async captcha(@Body() token: any, @Res() response) {
+    const res = this.visitorsService.captcha(token);
+    res
+      .then(rs => {
+        response.send(res);
+      })
+      .catch(err => {
+        response.send(err);
+      });
   }
 }
