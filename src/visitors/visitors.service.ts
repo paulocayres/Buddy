@@ -22,23 +22,21 @@ export class VisitorsService {
 
   async captcha(token: any): Promise<any> {
     Logger.log('entro serviço');
-    const body = JSON.stringify({
+    const body = {
       secret: process.env.captcha,
       response: token.token,
-    });
+    };
     Logger.log(body);
-/*     const retrn = await this.http
+    /*     const retrn = await this.http
       .post('https://www.google.com/recaptcha/api/siteverify', body)
       .toPromise(); */
 
-    return await this.http.post(
-      'https://www.google.com/recaptcha/api/siteverify',
-      body,
-      {
+    return await this.http
+      .post('https://www.google.com/recaptcha/api/siteverify', body, {
         headers: {
           'Content-Type': 'application/json',
         },
-      },
-    ).toPromise();
+      })
+      .toPromise();
   }
 }
