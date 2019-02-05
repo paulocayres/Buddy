@@ -21,6 +21,13 @@
     </script>
 
 
-    <script src="https://www.google.com/recaptcha/api.js?hl=pt-BR" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdXKY8UAAAAAKWetDcau19q3Kx5ijhRSrYgyZLi"></script>
+    <script>
+        grecaptcha.ready(function () {
+            grecaptcha.execute('reCAPTCHA_site_key', { action: 'homepage' }).then(function (token) {
+                console.log(token);
+            });
+        });
+    </script>
 
 </head>
