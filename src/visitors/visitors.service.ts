@@ -23,10 +23,10 @@ export class VisitorsService {
   }
 
   captcha(token: any) {
-    const body = JSON.stringify({
+    const body = encodeURIComponent(JSON.stringify({
       secret: process.env.captcha,
       response: token.token,
-    });
+    }));
     Logger.log('entro serviço');
 
     Logger.log(body);
@@ -34,7 +34,7 @@ export class VisitorsService {
     return this.http
       .post('https://www.google.com/recaptcha/api/siteverify', body, {
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'x-www-form-urlencoded',
         },
       })
       .pipe(
