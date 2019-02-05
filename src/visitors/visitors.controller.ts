@@ -38,10 +38,10 @@ export class VisitorsController {
     try {
       const res = await this.visitorsService.captcha(token);
       Logger.log(res);
-      response.send(res);
+      response.send('Response: ' + res);
 
     } catch (err) {
-      Logger.log(err);
+      Logger.log('Erro: ' + err);
       response.send(err);
     }
   }
