@@ -30,7 +30,7 @@ export class VisitorsController {
     const res = this.visitorsService.captcha(token);
     res
       .then(rs => {
-        response.send(res);
+        response.send(rs);
       })
       .catch(err => {
         response.send(err);
