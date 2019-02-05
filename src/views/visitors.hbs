@@ -13,7 +13,7 @@
   <div class="container visitor">
     <div class="row justify-content-center">
       <div class="col-8">
-        <form id="visitorForm" method="post" onsubmit="doGtagEvent(); return validateRecaptcha();">
+        <form id="visitorForm" method="post" onsubmit="doGtagEvent()">
           <div class="form-group">
             <label for="nome">
               <h5>Nome:</h5>
@@ -140,19 +140,10 @@
       return false;
     } else {
       document.getElementById("submit").disabled = false;
+      alert("Validou submit");
       return true;
     }
   });
-    /*if (response.length === 0) {
-      alert("not validated");
-      document.getElementById("submit").disabled = true;
-      return false;
-    } else {
-      alert("validated");
-      document.getElementById("submit").disabled = false;
-      return true;
-    }*/
-
 </script>
 
 </html>
