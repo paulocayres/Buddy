@@ -1,4 +1,4 @@
-import { HttpService, Injectable, Logger} from '@nestjs/common';
+import { HttpService, Injectable, Logger } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { VisitorDto } from './visitor.dto';
@@ -23,17 +23,24 @@ export class VisitorsService {
   }
 
   captcha(token: any) {
-
-    const body = {secret: process.env.captcha, response: token.token };
+    const body = JSON.stringify({
+      secret: process.env.captcha,
+      response: token.token,
+    });
     Logger.log('entro serviço');
 
     Logger.log(body);
 
     return this.http
-      .post('https://www.google.com/recaptcha/api/siteverify', body).pipe(
+      .post('https://www.google.com/recaptcha/api/siteverify', body, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      .pipe(
         map(response => response.data),
         catchError(err => Observable.throw(err.message)),
-    ).toPromise();
-
+      )
+      .toPromise();
   }
 }
