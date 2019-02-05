@@ -4,7 +4,7 @@ import { Model } from 'mongoose';
 import { VisitorDto } from './visitor.dto';
 import { Visitor } from './visitor.interface';
 import { Observable } from '../../node_modules/rxjs';
-import { map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class VisitorsService {
@@ -22,7 +22,7 @@ export class VisitorsService {
     return await this.visitorModel.find().exec();
   }
 
-  captcha(token: any): Observable<any> {
+  captcha(token: any) {
 
     const body = {secret: process.env.captcha, response: token.token };
     Logger.log('entro serviço');
@@ -32,6 +32,8 @@ export class VisitorsService {
     return this.http
       .post('https://www.google.com/recaptcha/api/siteverify?secret', body).pipe(
         map(response => response.data),
-    );
+        catchError(err => Observable.throw(err.message)),
+    ).toPromise();
+
   }
 }
