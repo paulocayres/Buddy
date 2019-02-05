@@ -3,14 +3,12 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { VisitorDto } from './visitor.dto';
 import { Visitor } from './visitor.interface';
-import { ClientRequest } from 'http';
 
 @Injectable()
 export class VisitorsService {
   constructor(
     @InjectModel('Visitor') private readonly visitorModel: Model<Visitor>,
     private http: HttpService,
-    private req: ClientRequest,
   ) {}
 
   async create(visitorDto: VisitorDto): Promise<Visitor> {
