@@ -24,7 +24,7 @@ export class VisitorsController {
     }
   }
 
-  @Post('visitors/captcha')
+  @Post('/captcha')
   async captcha(@Body() token: any, @Res() response) {
     const res = this.visitorsService.captcha(token);
     res
