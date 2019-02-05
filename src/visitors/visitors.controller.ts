@@ -1,4 +1,4 @@
-import { Controller, Render, Get, Post, Body } from '@nestjs/common';
+import { Controller, Render, Get, Post, Body, Req, Res } from '@nestjs/common';
 import { VisitorDto } from './visitor.dto';
 import { VisitorsService } from './visitors.service';
 
@@ -23,5 +23,4 @@ export class VisitorsController {
       return { message: 'Falha no cadastro, tente mais terde' };
     }
   }
-
 }

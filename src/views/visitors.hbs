@@ -3,7 +3,7 @@
 
 {{>head}}
 
-<body>
+<body onload="grecaptcha.execute()">
 
   <nav class="navbar navbar-light fixed-top navbar-fixed-top justify-content-center">
     <a class="navbar-brand">
@@ -35,6 +35,10 @@
             </label>
             <input type="tel" class="form-control form-control-lg" id="telefone" name="telefone" placeholder="Digite seu telefone para contato (opcional)">
           </div>
+
+          <div class="g-recaptcha" data-sitekey="6LcdKI8UAAAAADTbsHpBQ_dy2sEchR9w4lScxlSe"></div>
+          <br>
+
           <div class="row">
             <div class="col-6 align-items-center">
               <button id="btn-center" type="submit" type="button" class="btn btn-primary" onClick="empty()">Cadastrar</button>
