@@ -24,7 +24,7 @@ export class VisitorsService {
       Logger.log('entro serviço');
       this.body = { secret: process.env.captcha, response: token.token};
       Logger.log(this.body);
-      const response = await this.http.post('https://www.google.com/recaptcha/api/siteverify', this.body );
+      const response = await this.http.post('https://www.google.com/recaptcha/api/siteverify').subscribe(this.body);
       Logger.log(response);
       return response;
     }
