@@ -4,6 +4,7 @@ import { Model } from 'mongoose';
 import { VisitorDto } from './visitor.dto';
 import { Visitor } from './visitor.interface';
 import { map } from 'rxjs/operators';
+import { AxiosResponse } from '../../node_modules/axios';
 
 @Injectable()
 export class VisitorsService {
@@ -21,11 +22,11 @@ export class VisitorsService {
       return await this.visitorModel.find().exec();
     }
 
-    async captcha(token: any): Promise<any> {
+    async captcha(token: any): Promise<AxiosResponse> {
       Logger.log('entro serviço');
       this.body = { secret: process.env.captcha, response: token.token};
       Logger.log(this.body);
-      const retrn = await this.http.post('https://www.google.com/recaptcha/api/siteverify', this.body).subscribe();
+      const retrn = await this.http.post('https://www.google.com/recaptcha/api/siteverify', this.body).toPromise();
       Logger.log(retrn);
       return retrn;
     }
