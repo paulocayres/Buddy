@@ -25,7 +25,7 @@
     <script>
         grecaptcha.ready(function () {
             grecaptcha.execute('6LdXKY8UAAAAAKWetDcau19q3Kx5ijhRSrYgyZLi', { action: 'visitors' }).then(function (token) {
-                console.log(token);
+                document.getElementById("g-recaptcha-response").value = token;
             });
         });
     </script>
