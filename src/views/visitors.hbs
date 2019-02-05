@@ -107,7 +107,7 @@
     grecaptcha.execute('6LdXKY8UAAAAAKWetDcau19q3Kx5ijhRSrYgyZLi', { action: 'homepage' }).then(function (token) {
       document.getElementById("g-recaptcha-response").value = token;
       var token = {
-        token: $("#g-recaptcha-response").val()
+        token: token
       }
 
       console.log(token);
