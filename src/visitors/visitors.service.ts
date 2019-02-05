@@ -22,7 +22,8 @@ export class VisitorsService {
 
     async captcha(token: any): Promise<any> {
       this.body = { secret: process.env.captcha, response: token};
-
-      return this.http.post('https://www.google.com/recaptcha/api/siteverify', this.body );
+      const response = this.http.post('https://www.google.com/recaptcha/api/siteverify', this.body );
+      Logger.log(response);
+      return response;
     }
 }
