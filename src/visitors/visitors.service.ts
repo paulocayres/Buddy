@@ -23,11 +23,11 @@ export class VisitorsService {
       return await this.visitorModel.find().exec();
     }
 
-    captcha(token: any): Observable<AxiosResponse> {
+    async captcha(token: any): Promise<any> {
       Logger.log('entro serviço');
       this.body = { secret: process.env.captcha, response: token.token};
       Logger.log(this.body);
-      const retrn = this.http.post('https://www.google.com/recaptcha/api/siteverify', this.body);
+      const retrn = await this.http.post('https://www.google.com/recaptcha/api/siteverify', this.body).toPromise();
       Logger.log(retrn);
       return retrn;
     }
