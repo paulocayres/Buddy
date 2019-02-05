@@ -117,8 +117,12 @@
         data: JSON.stringify(token),
         contentType: "application/json; charset=utf-8",
         dataType: "json",
-        success: function (data) { alert(data.success); },
+        success: function (data) {
+          console.log("sucesso");
+           alert(data.success);
+        },
         failure: function (errMsg) {
+          console.log("erro");
           alert(errMsg);
         }
       });
