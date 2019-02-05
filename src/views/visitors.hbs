@@ -10,11 +10,10 @@
       <img src="logo.svg" height="70px" class="d-inline-block" alt="">
     </a>
   </nav>
-  <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
   <div class="container visitor">
     <div class="row justify-content-center">
       <div class="col-8">
-        <form id="visitorForm" method="post" onsubmit="doGtagEvent()">
+        <form id="visitorForm" method="post" onsubmit="doGtagEvent(); grecaptcha.execute()">
           <div class="form-group">
             <label for="nome">
               <h5>Nome:</h5>
@@ -105,7 +104,6 @@
 <script>
   grecaptcha.ready(function () {
     grecaptcha.execute('6LdXKY8UAAAAAKWetDcau19q3Kx5ijhRSrYgyZLi', { action: 'homepage' }).then(function (token) {
-      document.getElementById("g-recaptcha-response").value = token;
       var token = {
         token: token
       }
@@ -127,6 +125,7 @@
         failure: function (errMsg) {
           console.log(errMsg);
           alert(JSON.stringify(errMsg));
+          return false;
         }
       });
     });
