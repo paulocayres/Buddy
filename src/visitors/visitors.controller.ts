@@ -37,10 +37,10 @@ export class VisitorsController {
     Logger.log('Entrou');
     try {
       const res = await this.visitorsService.captcha(token);
-      return res;
+      response.send(res);
 
     } catch (err) {
-      return err;
+      response.send(err);
     }
   }
 }
