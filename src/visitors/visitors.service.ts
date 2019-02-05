@@ -28,6 +28,6 @@ export class VisitorsService {
     Logger.log(body);
 
     return await this.http
-      .get('https://www.google.com/recaptcha/api/siteverify?secret = ' + process.env.captcha + 'response = ' + token.token).toPromise();
+      .get('https://www.google.com/recaptcha/api/siteverify?secret = ' + process.env.captcha + '&response = ' + token.token).toPromise();
   }
 }
