@@ -102,6 +102,8 @@
 
 <script src="https://www.google.com/recaptcha/api.js?hl=pt-BR&render=6LdXKY8UAAAAAKWetDcau19q3Kx5ijhRSrYgyZLi"></script>
 <script>
+
+  document.getElementById("submit").disabled = true;
   grecaptcha.ready(function () {
     grecaptcha.execute('6LdXKY8UAAAAAKWetDcau19q3Kx5ijhRSrYgyZLi', { action: 'homepage' }).then(function (token) {
       var token = {
@@ -118,14 +120,10 @@
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (data) {
-          console.log(data);
-
-          alert(JSON.stringify(data));
+          document.getElementById("submit").disabled = false;
         },
         failure: function (errMsg) {
-          console.log(errMsg);
-          alert(JSON.stringify(errMsg));
-          return false;
+          document.getElementById("submit").disabled = true;
         }
       });
     });
@@ -133,19 +131,14 @@
 </script>
 
 <script>
-  document.getElementById("submit").disabled = true;
-
-
   $("form").submit(function (event) {
     var response = grecaptcha.getResponse();
     if (response === "") {
       event.preventDefault();
-      alert("Please check the recaptcha");
-      alert("not validated");
+      alert("Captcha Inválido. Favor recarregar a página");
       document.getElementById("submit").disabled = true;
       return false;
     } else {
-      alert("validated");
       document.getElementById("submit").disabled = false;
       return true;
     }
