@@ -30,7 +30,7 @@ export class VisitorsService {
     Logger.log(body);
 
     return this.http
-      .post('https://www.google.com/recaptcha/api/siteverify?secret', body).pipe(
+      .post('https://www.google.com/recaptcha/api/siteverify', body).pipe(
         map(response => response.data),
         catchError(err => Observable.throw(err.message)),
     ).toPromise();
