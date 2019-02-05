@@ -38,7 +38,7 @@ export class VisitorsController {
     const res = this.visitorsService
       .captcha(token)
       .then( rs => {
-        Logger.log('Erro: ' + rs);
+        Logger.log('Retorno: ' + JSON.stringify(rs));
         response.send(res);
       })
       .catch(err => {
