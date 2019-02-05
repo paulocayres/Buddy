@@ -3,6 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { VisitorDto } from './visitor.dto';
 import { Visitor } from './visitor.interface';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class VisitorsService {
@@ -24,8 +25,8 @@ export class VisitorsService {
       Logger.log('entro serviço');
       this.body = { secret: process.env.captcha, response: token.token};
       Logger.log(this.body);
-      const response = await this.http.post('https://www.google.com/recaptcha/api/siteverify').subscribe(this.body);
-      Logger.log(response);
-      return response;
+      const ret = await this.http.post('https://www.google.com/recaptcha/api/siteverify', this.body).subscribe();
+      Logger.log(ret);
+      return ret;
     }
 }
