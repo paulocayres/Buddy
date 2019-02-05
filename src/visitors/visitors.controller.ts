@@ -33,16 +33,17 @@ export class VisitorsController {
   }
 
   @Post('/captcha')
-  async captcha(@Body() token: any, @Res() response) {
+  captcha(@Body() token: any, @Res() response) {
     Logger.log('Entrou');
-    try {
-      const res = await this.visitorsService.captcha(token);
-      Logger.log(res);
-      response.send('Response: ' + res);
-
-    } catch (err) {
-      Logger.log('Erro: ' + err);
-      response.send(err);
-    }
+    const res = this.visitorsService
+      .captcha(token)
+      .then( rs => {
+        Logger.log('Erro: ' + rs);
+        response.send(res);
+      })
+      .catch(err => {
+        Logger.log('Erro: ' + err);
+        response.send(err);
+      });
   }
 }
