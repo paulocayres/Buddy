@@ -13,7 +13,7 @@
   <div class="container visitor">
     <div class="row justify-content-center">
       <div class="col-8">
-        <form id="visitorForm" method="post" onsubmit="doGtagEvent(); grecaptcha.execute()">
+        <form id="visitorForm" method="post" onsubmit="doGtagEvent(); return validateRecaptcha();">
           <div class="form-group">
             <label for="nome">
               <h5>Nome:</h5>
@@ -35,10 +35,10 @@
 
           <div class="row">
             <div class="col-6 align-items-center">
-              <button id="btn-center" type="submit" type="button" class="btn btn-primary" onClick="empty()">Cadastrar</button>
+              <button id="submit" type="submit" type="button" class="btn btn-primary btn-center" onClick="empty()">Cadastrar</button>
             </div>
             <div class="col-6">
-              <button id="btn-center" type="button" class="btn btn-secondary" onclick="getIndex()">Voltar</button>
+              <button id="back" type="button" class="btn btn-secondary btn-center" onclick="getIndex()">Voltar</button>
             </div>
           </div>
         </form>
@@ -120,7 +120,7 @@
         success: function (data) {
           console.log(data);
 
-           alert(JSON.stringify(data));
+          alert(JSON.stringify(data));
         },
         failure: function (errMsg) {
           console.log(errMsg);
@@ -130,6 +130,36 @@
       });
     });
   });
+</script>
+
+<script>
+  document.getElementById("submit").disabled = true;
+
+
+  $("form").submit(function (event) {
+    var response = grecaptcha.getResponse();
+    if (response === "") {
+      event.preventDefault();
+      alert("Please check the recaptcha");
+      alert("not validated");
+      document.getElementById("submit").disabled = true;
+      return false;
+    } else {
+      alert("validated");
+      document.getElementById("submit").disabled = false;
+      return true;
+    }
+  });
+    /*if (response.length === 0) {
+      alert("not validated");
+      document.getElementById("submit").disabled = true;
+      return false;
+    } else {
+      alert("validated");
+      document.getElementById("submit").disabled = false;
+      return true;
+    }*/
+
 </script>
 
 </html>
