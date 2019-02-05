@@ -1,4 +1,4 @@
-import { HttpService, Injectable, Logger } from '@nestjs/common';
+import { HttpService, Injectable, Logger, Req } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { VisitorDto } from './visitor.dto';
@@ -20,21 +20,24 @@ export class VisitorsService {
     return await this.visitorModel.find().exec();
   }
 
-  async captcha(token: any): Promise<any> {
+  async captcha(token: any, @Req() req): Promise<any> {
     Logger.log('entro serviço');
-    const body = {
+    req.AddHeader('content-type', 'x-www-form-urlencoded');
+    req.AddParameter('secret', process.env.captcha);
+    req.AddParameter('response', token.token);
+/*     const body = {
       secret: process.env.captcha,
       response: token.token,
-    };
-    Logger.log(body);
+    }; */
+    Logger.log(req);
     /*     const retrn = await this.http
       .post('https://www.google.com/recaptcha/api/siteverify', body)
       .toPromise(); */
 
     return await this.http
-      .post('https://www.google.com/recaptcha/api/siteverify', body, {
+      .post('https://www.google.com/recaptcha/api/siteverify', req, {
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
       })
       .toPromise();
