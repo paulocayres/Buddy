@@ -14,7 +14,7 @@
   <div class="container visitor">
     <div class="row justify-content-center">
       <div class="col-8">
-        <form id="visitorForm" method="post" onsubmit="doGtagEvent();grecaptcha.execute()">
+        <form id="visitorForm" method="post" onsubmit="doGtagEvent()">
           <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
           <input type="hidden" name="action" value="validate_captcha">
           <div class="form-group">
@@ -37,11 +37,14 @@
           </div>
 
           <div class="row">
-            <div class="col-6 align-items-center">
+            <div class="col-4 align-items-center">
               <button id="btn-center" type="submit" type="button" class="btn btn-primary" onClick="empty()">Cadastrar</button>
             </div>
-            <div class="col-6">
+            <div class="col-4">
               <button id="btn-center" type="button" class="btn btn-secondary" onclick="getIndex()">Voltar</button>
+            </div>
+            <div class="col-4">
+              <button id="btn-center" type="button" class="btn btn-secondary" onclick="grecaptcha.execute()">Voltar</button>
             </div>
           </div>
         </form>
