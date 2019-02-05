@@ -19,33 +19,4 @@
 
         gtag('config', 'UA-133564033-2');
     </script>
-
-
-    <script src="https://www.google.com/recaptcha/api.js?render=6LdXKY8UAAAAAKWetDcau19q3Kx5ijhRSrYgyZLi"></script>
-    <script>
-        grecaptcha.ready(function () {
-            grecaptcha.execute('6LdXKY8UAAAAAKWetDcau19q3Kx5ijhRSrYgyZLi', { action: 'homepage' }).then(function (token) {
-                document.getElementById("g-recaptcha-response").value = token;
-                var token = {
-                    token: $("#g-recaptcha-response").val()
-                }
-
-                $.ajax({
-                    type: "POST",
-                    url: "/visitors/captcha",
-                    // The key needs to match your method's input parameter (case-sensitive).
-                    data: JSON.stringify(token),
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function (data) { alert(data); },
-                    failure: function (errMsg) {
-                        alert(errMsg);
-                    }
-                });
-            });
-        });
-    </script>
-
-
-
 </head>
