@@ -110,6 +110,8 @@
         token: $("#g-recaptcha-response").val()
       }
 
+      console.log(token);
+
       $.ajax({
         type: "POST",
         url: "visitors/captcha",
