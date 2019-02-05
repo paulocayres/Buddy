@@ -6,26 +6,39 @@ import { Visitor } from './visitor.interface';
 
 @Injectable()
 export class VisitorsService {
+  constructor(
+    @InjectModel('Visitor') private readonly visitorModel: Model<Visitor>,
+    private http: HttpService,
+  ) {}
 
-    body: any;
+  async create(visitorDto: VisitorDto): Promise<Visitor> {
+    const createdVisitor = await new this.visitorModel(visitorDto);
+    return createdVisitor.save();
+  }
 
-    constructor(@InjectModel('Visitor') private readonly visitorModel: Model<Visitor>, private http: HttpService) {}
+  async findAll(): Promise<Visitor[]> {
+    return await this.visitorModel.find().exec();
+  }
 
-    async create(visitorDto: VisitorDto): Promise<Visitor> {
-      const createdVisitor = await new this.visitorModel(visitorDto);
-      return createdVisitor.save();
-    }
+  async captcha(token: any): Promise<any> {
+    Logger.log('entro serviço');
+    const body = JSON.stringify({
+      secret: process.env.captcha,
+      response: token.token,
+    });
+    Logger.log(body);
+/*     const retrn = await this.http
+      .post('https://www.google.com/recaptcha/api/siteverify', body)
+      .toPromise(); */
 
-    async findAll(): Promise<Visitor[]> {
-      return await this.visitorModel.find().exec();
-    }
-
-    async captcha(token: any): Promise<any> {
-      Logger.log('entro serviço');
-      this.body = { secret: process.env.captcha, response: token.token};
-      Logger.log(this.body);
-      const retrn = await this.http.post('https://www.google.com/recaptcha/api/siteverify', this.body).toPromise();
-      Logger.log('Retorno ' + retrn);
-      return retrn;
-    }
+    return await this.http.post(
+      'https://www.google.com/recaptcha/api/siteverify',
+      body,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      },
+    ).toPromise();
+  }
 }
