@@ -1,14 +1,16 @@
-import { HttpService, Injectable, Logger, Req } from '@nestjs/common';
+import { HttpService, Injectable, Logger} from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { VisitorDto } from './visitor.dto';
 import { Visitor } from './visitor.interface';
+import { ClientRequest } from 'http';
 
 @Injectable()
 export class VisitorsService {
   constructor(
     @InjectModel('Visitor') private readonly visitorModel: Model<Visitor>,
     private http: HttpService,
+    private req: ClientRequest,
   ) {}
 
   async create(visitorDto: VisitorDto): Promise<Visitor> {
@@ -20,22 +22,15 @@ export class VisitorsService {
     return await this.visitorModel.find().exec();
   }
 
-  async captcha(token: any, @Req() req): Promise<any> {
+  async captcha(token: any): Promise<any> {
+
+    const body = {secret: process.env.captcha, response: token.token };
     Logger.log('entro serviço');
-    req.AddHeader('content-type', 'x-www-form-urlencoded');
-    req.AddParameter('secret', process.env.captcha);
-    req.AddParameter('response', token.token);
-/*     const body = {
-      secret: process.env.captcha,
-      response: token.token,
-    }; */
-    Logger.log(req);
-    /*     const retrn = await this.http
-      .post('https://www.google.com/recaptcha/api/siteverify', body)
-      .toPromise(); */
+
+    Logger.log(body);
 
     return await this.http
-      .post('https://www.google.com/recaptcha/api/siteverify', req, {
+      .post('https://www.google.com/recaptcha/api/siteverify', body, {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
