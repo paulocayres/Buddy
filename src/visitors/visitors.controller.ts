@@ -36,12 +36,8 @@ export class VisitorsController {
   captcha(@Body() token: any, @Res() response) {
     Logger.log('Entrou');
     const res = this.visitorsService.captcha(token);
-    res
-      .then(rs => {
-        response.send(rs);
-      })
-      .catch(err => {
-        response.send(err);
-      });
+    res.subscribe(rs => {
+      response.send(rs);
+    });
   }
 }
