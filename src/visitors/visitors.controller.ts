@@ -1,4 +1,12 @@
-import { Controller, Render, Get, Post, Body, Res, Logger } from '@nestjs/common';
+import {
+  Controller,
+  Render,
+  Get,
+  Post,
+  Body,
+  Res,
+  Logger,
+} from '@nestjs/common';
 import { VisitorDto } from './visitor.dto';
 import { VisitorsService } from './visitors.service';
 
@@ -25,7 +33,7 @@ export class VisitorsController {
   }
 
   @Post('/captcha')
-  async captcha(@Body() token: any, @Res() response) {
+  captcha(@Body() token: any, @Res() response) {
     Logger.log('Entrou');
     const res = this.visitorsService.captcha(token);
     res
