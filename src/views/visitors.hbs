@@ -120,12 +120,12 @@
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (data) {
-          console.log("sucesso");
+          console.log(data);
 
            alert(JSON.stringify(data));
         },
         failure: function (errMsg) {
-          console.log("erro");
+          console.log(errMsg);
           alert(JSON.stringify(errMsg));
         }
       });
