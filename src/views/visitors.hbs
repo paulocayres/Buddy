@@ -119,11 +119,12 @@
         dataType: "json",
         success: function (data) {
           console.log("sucesso");
-           alert(data.success);
+
+           alert(JSON.stringify(data));
         },
         failure: function (errMsg) {
           console.log("erro");
-          alert(errMsg);
+          alert(JSON.stringify(errMsg));
         }
       });
     });
