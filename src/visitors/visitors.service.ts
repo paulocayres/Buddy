@@ -32,7 +32,7 @@ export class VisitorsService {
     return await this.http
       .post('https://www.google.com/recaptcha/api/siteverify', body, {
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Type': 'application/json',
         },
       })
       .toPromise();
