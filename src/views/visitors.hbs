@@ -120,11 +120,11 @@
         success: function (data) {
           console.log("sucesso");
 
-           alert(JSON.stringify(data));
+           alert(JSON.stringify(data | async));
         },
         failure: function (errMsg) {
           console.log("erro");
-          alert(JSON.stringify(errMsg));
+          alert(JSON.stringify(errMsg | async));
         }
       });
     });
