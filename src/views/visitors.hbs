@@ -104,9 +104,12 @@
 <script>
 function validateCaptcha(){
   document.getElementById("submit").disabled = true;
+  alert("disable");
   grecaptcha.reset();
+  alert("reset");
   grecaptcha.ready(function () {
     grecaptcha.execute('6LdXKY8UAAAAAKWetDcau19q3Kx5ijhRSrYgyZLi', { action: 'homepage' }).then(function (token) {
+      alert("execute");
       var token = {
         token: token
       }
@@ -121,9 +124,11 @@ function validateCaptcha(){
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (data) {
+          alert("sucesso");
           document.getElementById("submit").disabled = false;
         },
         failure: function (errMsg) {
+          alert("falha");
           document.getElementById("submit").disabled = true;
           e.preventDefault();
           return false;
