@@ -13,7 +13,7 @@
   <div class="container visitor">
     <div class="row justify-content-center">
       <div class="col-8">
-        <form id="visitorForm" method="post" onsubmit="doGtagEvent()">
+        <form id="visitorForm" method="post" onsubmit="doGtagEvent(); validateCaptcha()">
           <div class="form-group">
             <label for="nome">
               <h5>Nome:</h5>
@@ -102,7 +102,7 @@
 
 <script src="https://www.google.com/recaptcha/api.js?hl=pt-BR&render=6LdXKY8UAAAAAKWetDcau19q3Kx5ijhRSrYgyZLi"></script>
 <script>
-
+function validateCaptcha(){
   document.getElementById("submit").disabled = true;
   grecaptcha.ready(function () {
     grecaptcha.execute('6LdXKY8UAAAAAKWetDcau19q3Kx5ijhRSrYgyZLi', { action: 'homepage' }).then(function (token) {
@@ -128,6 +128,9 @@
       });
     });
   });
+}
+
+validateCaptcha();
 </script>
 
 {{!-- <script>
