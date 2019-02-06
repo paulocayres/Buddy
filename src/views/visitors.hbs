@@ -124,6 +124,7 @@ function validateCaptcha(){
         },
         failure: function (errMsg) {
           document.getElementById("submit").disabled = true;
+          return false;
         }
       });
     });
