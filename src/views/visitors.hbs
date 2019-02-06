@@ -13,7 +13,7 @@
   <div class="container visitor">
     <div class="row justify-content-center">
       <div class="col-8">
-        <form id="visitorForm" method="post" onsubmit="doGtagEvent(); validateCaptcha()">
+        <form id="visitorForm" method="post" onsubmit="doGtagEvent(); grecaptcha.getResponse()">
           <div class="form-group">
             <label for="nome">
               <h5>Nome:</h5>
