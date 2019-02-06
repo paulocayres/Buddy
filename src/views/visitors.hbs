@@ -104,7 +104,7 @@
 <script>
 function validateCaptcha(){
   document.getElementById("submit").disabled = true;
-  ggrecaptcha.reset();
+  grecaptcha.reset();
   grecaptcha.ready(function () {
     grecaptcha.execute('6LdXKY8UAAAAAKWetDcau19q3Kx5ijhRSrYgyZLi', { action: 'homepage' }).then(function (token) {
       var token = {
@@ -125,6 +125,7 @@ function validateCaptcha(){
         },
         failure: function (errMsg) {
           document.getElementById("submit").disabled = true;
+          e.preventDefault();
           return false;
         }
       });
