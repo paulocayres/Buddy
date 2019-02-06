@@ -52,7 +52,6 @@ export class VisitorsService {
           process.env.captcha +
           '&response=' +
           visitorDto.recaptcha,
-          // '6LdXKY8UAAAAAPxe_nL-1yIlyPQentSg3afyK6s9'
       )
       .pipe(map(response => response.data))
       .toPromise();
