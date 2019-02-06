@@ -124,13 +124,13 @@
           success: function (data) {
             alert("sucesso");
             document.getElementById("submit").disabled = false;
-            e.preventDefault();
+            preventDefault();
             return false;
           },
           failure: function (errMsg) {
             alert("falha");
             document.getElementById("submit").disabled = true;
-            e.preventDefault();
+            preventDefault();
             return false;
           }
         });
