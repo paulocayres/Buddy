@@ -4,7 +4,6 @@ import {
   Get,
   Post,
   Body,
-  Res,
   Logger,
 } from '@nestjs/common';
 import { VisitorDto } from './visitor.dto';
@@ -24,17 +23,23 @@ export class VisitorsController {
   @Post()
   @Render('visitors')
   async create(@Body() visitorDto: VisitorDto) {
-    try {
       const visitor = await this.visitorsService.create(visitorDto);
-      return { message: 'Cadastro realizado com sucesso' };
-    } catch {
-      return { message: 'Falha no cadastro, tente mais terde' };
-    }
+
+      Logger.log('visitorController' + visitor);
+
+      if (visitor === 'captcha') {
+        return { message: 'Alerta do Google Captcha, tente novamente' };
+      } else if (visitor === 'mongodb') {
+        return { message: 'Falha no cadastro, tente novamente' };
+      } else {
+        return { message: 'Cadastro realizado com sucesso' };
+      }
+
   }
 
-  @Post('/captcha')
+/*   @Post('/captcha')
   async captcha(@Body() token) {
     Logger.log('Entrou');
     return this.visitorsService.captcha(token);
-  }
+  } */
 }

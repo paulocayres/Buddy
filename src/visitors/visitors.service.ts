@@ -3,8 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { VisitorDto } from './visitor.dto';
 import { Visitor } from './visitor.interface';
-import { Observable } from '../../node_modules/rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class VisitorsService {
@@ -13,16 +12,42 @@ export class VisitorsService {
     private http: HttpService,
   ) {}
 
-  async create(visitorDto: VisitorDto): Promise<Visitor> {
-    const createdVisitor = await new this.visitorModel(visitorDto);
-    return createdVisitor.save();
+  async create(visitorDto: VisitorDto): Promise<any> {
+    Logger.log('DTO' + visitorDto.recaptcha);
+    if (visitorDto.recaptcha) {
+      const captcha = await this.http
+        .get(
+          'https://www.google.com/recaptcha/api/siteverify?secret=' +
+            process.env.captcha +
+            '&response=' +
+            visitorDto.recaptcha,
+        )
+        .pipe(map(response => response.data))
+        .toPromise();
+
+      Logger.log('captcha' + JSON.stringify(captcha));
+
+      if (captcha.success) {
+        const createdVisitor = await new this.visitorModel(visitorDto);
+        Logger.log('createdVisitor' + createdVisitor);
+        if (createdVisitor) {
+          return createdVisitor.save();
+        } else {
+          return 'mongodb';
+        }
+      } else {
+        return 'captcha';
+      }
+    } else {
+      return 'mongodb';
+    }
   }
 
   async findAll(): Promise<Visitor[]> {
     return await this.visitorModel.find().exec();
   }
 
-  captcha(token: any) {
+  /*   captcha(token: any) {
     const body = encodeURIComponent(JSON.stringify({
       secret: process.env.captcha,
       response: token.token,
@@ -38,5 +63,5 @@ export class VisitorsService {
         catchError(err => Observable.throw(err.message)),
       )
       .toPromise();
-  }
+  } */
 }
