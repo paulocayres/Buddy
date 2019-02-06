@@ -102,44 +102,45 @@
 
 <script src="https://www.google.com/recaptcha/api.js?hl=pt-BR&render=6LdXKY8UAAAAAKWetDcau19q3Kx5ijhRSrYgyZLi"></script>
 <script>
-function validateCaptcha(){
-  document.getElementById("submit").disabled = true;
-  alert("disable");
-  grecaptcha.ready(function () {
-    grecaptcha.execute('6LdXKY8UAAAAAKWetDcau19q3Kx5ijhRSrYgyZLi', { action: 'homepage' }).then(function (token) {
-      alert("execute");
-      var token = {
-        token: token
-      }
-
-      console.log(token);
-
-      $.ajax({
-        type: "POST",
-        url: "visitors/captcha",
-        // The key needs to match your method's input parameter (case-sensitive).
-        data: JSON.stringify(token),
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: function (data) {
-          alert("sucesso");
-          document.getElementById("submit").disabled = false;
-        },
-        failure: function (errMsg) {
-          alert("falha");
-          document.getElementById("submit").disabled = true;
-          e.preventDefault();
-          return false;
+  function validateCaptcha() {
+    document.getElementById("submit").disabled = true;
+    alert("disable");
+    grecaptcha.ready(function () {
+      grecaptcha.execute('6LdXKY8UAAAAAKWetDcau19q3Kx5ijhRSrYgyZLi', { action: 'homepage' }).then(function (token) {
+        alert("execute");
+        var token = {
+          token: token
         }
+
+        console.log(token);
+
+        $.ajax({
+          type: "POST",
+          url: "visitors/captcha",
+          // The key needs to match your method's input parameter (case-sensitive).
+          data: JSON.stringify(token),
+          contentType: "application/json; charset=utf-8",
+          dataType: "json",
+          success: function (data) {
+            alert("sucesso");
+            document.getElementById("submit").disabled = false;
+            e.preventDefault();
+            return false;
+          },
+          failure: function (errMsg) {
+            alert("falha");
+            document.getElementById("submit").disabled = true;
+            e.preventDefault();
+            return false;
+          }
+        });
       });
     });
-  });
-}
+  }
 
-validateCaptcha();
-</script>
-
-{{!-- <script>
+  validateCaptcha();
+</script> {{!--
+<script>
   $("form").submit(function (event) {
     var response = grecaptcha.getResponse();
     if (response === "") {
