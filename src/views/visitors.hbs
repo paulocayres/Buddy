@@ -105,8 +105,6 @@
 function validateCaptcha(){
   document.getElementById("submit").disabled = true;
   alert("disable");
-  grecaptcha.reset();
-  alert("reset");
   grecaptcha.ready(function () {
     grecaptcha.execute('6LdXKY8UAAAAAKWetDcau19q3Kx5ijhRSrYgyZLi', { action: 'homepage' }).then(function (token) {
       alert("execute");
