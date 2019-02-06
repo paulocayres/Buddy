@@ -45,7 +45,7 @@ export class VisitorsService {
     return this.http
       .get(
         'https://www.google.com/recaptcha/api/siteverify?secret=' +
-          process.env.captcha +
+        process.env.captcha +
           '&response=' +
           visitorDto.recaptcha,
           // '6LdXKY8UAAAAAPxe_nL-1yIlyPQentSg3afyK6s9'

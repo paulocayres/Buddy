@@ -87,14 +87,14 @@
   }
 
 
-  /*$('#confirmModal').on('hidden.bs.modal', function () {
-    if ({{message}} == 'Cadastro realizado com sucesso'){
+  $('#confirmModal').on('hidden.bs.modal', function () {
+    if ('{{message}}' == 'Cadastro realizado com sucesso'){
       window.location.href = "../";
     } else {
       window.location.href = "../visitors";
     }
     
-  });*/
+  });
 
   function doGtagEvent() {
     gtag('event', 'confirma');
