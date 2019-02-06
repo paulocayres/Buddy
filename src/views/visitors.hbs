@@ -110,62 +110,15 @@
   $('#telefone').mask(behavior, options);
 
 
-
-
-</script> {{!--
-<script>
-  function validateCaptcha() {
-    document.getElementById("submit").disabled = true;
-    alert("disable");
-    grecaptcha.ready(function () {
-      grecaptcha.execute('6LdXKY8UAAAAAKWetDcau19q3Kx5ijhRSrYgyZLi', { action: 'homepage' }).then(function (token) {
-        document.getElementById("recaptcha").value = token;
-        var token = {
-          token: token
-        }
-
-        console.log(token);
-
-        $.ajax({
-          type: "POST",
-          url: "visitors/captcha",
-          // The key needs to match your method's input parameter (case-sensitive).
-          data: JSON.stringify(token),
-          contentType: "application/json; charset=utf-8",
-          dataType: "json",
-          success: function (data) {
-            alert("sucesso");
-            document.getElementById("submit").disabled = false;
-            preventDefault();
-            return false;
-          },
-          failure: function (errMsg) {
-            alert("falha");
-            document.getElementById("submit").disabled = true;
-            preventDefault();
-            return false;
-          }
-        });
-      });
-    });
-  }
-
-  validateCaptcha();
-</script> --}} {{!--
-<script>
-  $("form").submit(function (event) {
-    var response = grecaptcha.getResponse();
-    if (response === "") {
-      event.preventDefault();
-      alert("Captcha Inválido. Favor recarregar a página");
-      document.getElementById("submit").disabled = true;
-      return false;
-    } else {
-      document.getElementById("submit").disabled = false;
-      alert("Validou submit");
-      return true;
+  $("#nome").on("input", function () {
+    var regexp = /[^a-zA-Z áàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]/g;
+    if (this.value.match(regexp)) {
+      $(this).val(this.value.replace(regexp, ''));
     }
   });
-</script> --}}
+
+
+
+</script>
 
 </html>
