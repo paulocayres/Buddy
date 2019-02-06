@@ -103,10 +103,10 @@
 <script src="https://www.google.com/recaptcha/api.js?hl=pt-BR&render=6LdXKY8UAAAAAKWetDcau19q3Kx5ijhRSrYgyZLi"></script>
 <script>
   function validateCaptcha() {
-    document.getElementById("submit").disabled = true;
+    //document.getElementById("submit").disabled = true;
     alert("disable");
     grecaptcha.ready(function () {
-      grecaptcha.execute('6LdXKY8UAAAAAKWetDcau19q3Kx5ijhRSrYgyZLi', { action: 'homepage' }).then(function (token) {
+      grecaptcha.execute('6LdXKY8UAAAAAKWetDcau19q3Kx5ijhRSrYgyZL', { action: 'homepage' }).then(function (token) {
         alert("execute");
         var token = {
           token: token
