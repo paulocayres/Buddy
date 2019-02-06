@@ -13,33 +13,31 @@ export class VisitorsService {
   ) {}
 
   async create(visitorDto: VisitorDto): Promise<any> {
-    Logger.log('DTO' + visitorDto.recaptcha);
+    // Logger.log('DTO' + visitorDto.recaptcha);
     if (visitorDto.recaptcha) {
-      const captcha = await this.http
-        .get(
-          'https://www.google.com/recaptcha/api/siteverify?secret=' +
-            process.env.captcha +
-            '&response=' +
-            visitorDto.recaptcha,
-        )
-        .pipe(map(response => response.data))
-        .toPromise();
+      const captcha = await this.captcha(visitorDto);
 
-      Logger.log('captcha' + JSON.stringify(captcha));
-
-      if (captcha.success) {
-        const createdVisitor = await new this.visitorModel(visitorDto);
-        Logger.log('createdVisitor' + createdVisitor);
+      if (captcha.success === true) {
+        const createdVisitor = new this.visitorModel(visitorDto);
+        // Logger.log('Visitor' + createdVisitor);
         if (createdVisitor) {
-          return createdVisitor.save();
+          try {
+            const save = await createdVisitor.save();
+            return save;
+            // Logger.log(save);
+          } catch (err) {
+            // Logger.log('err');
+            throw new Error('err.code');
+            // return 'err';
+          }
         } else {
-          return 'mongodb';
-        }
+          throw new Error('database');
+        } /*  */
       } else {
-        return 'captcha';
+        throw new Error('captcha');
       }
     } else {
-      return 'mongodb';
+      throw new Error('database');
     }
   }
 
@@ -47,21 +45,16 @@ export class VisitorsService {
     return await this.visitorModel.find().exec();
   }
 
-  /*   captcha(token: any) {
-    const body = encodeURIComponent(JSON.stringify({
-      secret: process.env.captcha,
-      response: token.token,
-    }));
-    Logger.log('entro serviço');
-
-    Logger.log(body);
-
+  captcha(visitorDto: VisitorDto): Promise<any> {
     return this.http
-      .get('https://www.google.com/recaptcha/api/siteverify?secret=' + process.env.captcha + '&response=' + token.token)
-      .pipe(
-        map(response => response.data),
-        catchError(err => Observable.throw(err.message)),
+      .get(
+        'https://www.google.com/recaptcha/api/siteverify?secret=' +
+          process.env.captcha +
+          '&response=' +
+          visitorDto.recaptcha,
+          // '6LdXKY8UAAAAAPxe_nL-1yIlyPQentSg3afyK6s9'
       )
+      .pipe(map(response => response.data))
       .toPromise();
-  } */
+  }
 }

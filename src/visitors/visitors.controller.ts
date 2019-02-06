@@ -1,11 +1,4 @@
-import {
-  Controller,
-  Render,
-  Get,
-  Post,
-  Body,
-  Logger,
-} from '@nestjs/common';
+import { Controller, Render, Get, Post, Body, Logger } from '@nestjs/common';
 import { VisitorDto } from './visitor.dto';
 import { VisitorsService } from './visitors.service';
 
@@ -23,23 +16,20 @@ export class VisitorsController {
   @Post()
   @Render('visitors')
   async create(@Body() visitorDto: VisitorDto) {
+    try {
       const visitor = await this.visitorsService.create(visitorDto);
-
       Logger.log('visitorController' + visitor);
-
-      if (visitor === 'captcha') {
-        return { message: 'Alerta do Google Captcha, tente novamente' };
-      } else if (visitor === 'mongodb') {
-        return { message: 'Falha no cadastro, tente novamente' };
-      } else {
-        return { message: 'Cadastro realizado com sucesso' };
+      return { message: 'Cadastro realizado com sucesso' };
+    } catch (err) {
+      Logger.log(err);
+      if (err.toString() === 'Error: 11000') {
+        return { message: 'Email já cadastrado' };
+      } else if (err.toString() === 'Error: database') {
+        return { message: 'Falha ao cadastrar, tente novamente' };
+      } else if (err.toString() === 'Error: captcha') {
+        return { message: 'Captcha inválido, tente novamente' };
       }
-
+      return { message: err };
+    }
   }
-
-/*   @Post('/captcha')
-  async captcha(@Body() token) {
-    Logger.log('Entrou');
-    return this.visitorsService.captcha(token);
-  } */
 }
