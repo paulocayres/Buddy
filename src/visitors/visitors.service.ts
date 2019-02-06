@@ -27,7 +27,7 @@ export class VisitorsService {
             // Logger.log(save);
           } catch (err) {
             // Logger.log('err');
-            throw new Error('err.code');
+            throw new Error (err.code);
             // return 'err';
           }
         } else {
@@ -41,10 +41,6 @@ export class VisitorsService {
     }
   }
 
-  async findAll(): Promise<Visitor[]> {
-    return await this.visitorModel.find().exec();
-  }
-
   captcha(visitorDto: VisitorDto): Promise<any> {
     return this.http
       .get(
@@ -52,8 +48,10 @@ export class VisitorsService {
           process.env.captcha +
           '&response=' +
           visitorDto.recaptcha,
+          // '6LdXKY8UAAAAAPxe_nL-1yIlyPQentSg3afyK6s9'
       )
       .pipe(map(response => response.data))
       .toPromise();
   }
+
 }
