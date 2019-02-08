@@ -89,6 +89,7 @@
 
   $('#confirmModal').on('hidden.bs.modal', function () {
     if ('{{message}}' == 'Cadastro realizado com sucesso'){
+      gtag('event', 'sucesso');
       window.location.href = "../";
     } else {
       window.location.href = "../visitors";
